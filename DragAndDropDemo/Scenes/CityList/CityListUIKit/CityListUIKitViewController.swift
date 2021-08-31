@@ -40,6 +40,7 @@ private extension CityListUIKitViewController {
 
   func setupTable() {
     tableView.dataSource = self
+    tableView.register(TeamCell.self, forCellReuseIdentifier: "TeamCell")
   }
 
   func setupConstraints() {
@@ -60,7 +61,15 @@ extension CityListUIKitViewController: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    UITableViewCell()
+    let cell = TeamCell()
+    cell.render(
+      TeamCell.Props(
+        title: "Test",
+        subtitle: "Subtest",
+        imageUrl: URL(string: "https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/\(indexPath.row + 1).svg")!
+      )
+    )
+    return cell
   }
 }
 
