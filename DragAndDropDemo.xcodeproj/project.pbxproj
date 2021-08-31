@@ -16,6 +16,10 @@
 		5B1D29EC26DEB34800D0105F /* TeamsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D29EB26DEB34800D0105F /* TeamsService.swift */; };
 		5B1D29EF26DEB37F00D0105F /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D29EE26DEB37F00D0105F /* Team.swift */; };
 		5B1D29F226DEB39300D0105F /* Division.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D29F126DEB39300D0105F /* Division.swift */; };
+		5B1D29F426DEB55A00D0105F /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D29F326DEB55A00D0105F /* Error.swift */; };
+		5B1D29F626DEB5CB00D0105F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D29F526DEB5CB00D0105F /* Repository.swift */; };
+		5B1D29F926DEBB1200D0105F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D29F826DEBB1200D0105F /* Constants.swift */; };
+		5B1D29FB26DEBDE100D0105F /* DivisionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D29FA26DEBDE100D0105F /* DivisionService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		5B1D29EB26DEB34800D0105F /* TeamsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsService.swift; sourceTree = "<group>"; };
 		5B1D29EE26DEB37F00D0105F /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		5B1D29F126DEB39300D0105F /* Division.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Division.swift; sourceTree = "<group>"; };
+		5B1D29F326DEB55A00D0105F /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		5B1D29F526DEB5CB00D0105F /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		5B1D29F826DEBB1200D0105F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5B1D29FA26DEBDE100D0105F /* DivisionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,7 @@
 		5A17810326DCEFBE00C46DDE /* DragAndDropDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5B1D29F726DEBB0A00D0105F /* Utils */,
 				5B1D29ED26DEB37100D0105F /* Models */,
 				5B1D29EA26DEB32A00D0105F /* Services */,
 				5A17811826DCEFE600C46DDE /* Scenes */,
@@ -102,7 +111,9 @@
 		5B1D29EA26DEB32A00D0105F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5B1D29FA26DEBDE100D0105F /* DivisionService.swift */,
 				5B1D29EB26DEB34800D0105F /* TeamsService.swift */,
+				5B1D29F526DEB5CB00D0105F /* Repository.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -112,8 +123,17 @@
 			children = (
 				5B1D29EE26DEB37F00D0105F /* Team.swift */,
 				5B1D29F126DEB39300D0105F /* Division.swift */,
+				5B1D29F326DEB55A00D0105F /* Error.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5B1D29F726DEBB0A00D0105F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5B1D29F826DEBB1200D0105F /* Constants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,9 +209,13 @@
 				5B1D29EC26DEB34800D0105F /* TeamsService.swift in Sources */,
 				5A17810926DCEFBE00C46DDE /* ViewController.swift in Sources */,
 				5B1D29F226DEB39300D0105F /* Division.swift in Sources */,
+				5B1D29F626DEB5CB00D0105F /* Repository.swift in Sources */,
+				5B1D29FB26DEBDE100D0105F /* DivisionService.swift in Sources */,
 				5A17810526DCEFBE00C46DDE /* AppDelegate.swift in Sources */,
 				5B1D29EF26DEB37F00D0105F /* Team.swift in Sources */,
+				5B1D29F426DEB55A00D0105F /* Error.swift in Sources */,
 				5A17810726DCEFBE00C46DDE /* SceneDelegate.swift in Sources */,
+				5B1D29F926DEBB1200D0105F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
