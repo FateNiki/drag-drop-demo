@@ -13,6 +13,9 @@
 		5A17810C26DCEFBE00C46DDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A17810A26DCEFBE00C46DDE /* Main.storyboard */; };
 		5A17810E26DCEFBF00C46DDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A17810D26DCEFBF00C46DDE /* Assets.xcassets */; };
 		5A17811126DCEFBF00C46DDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A17810F26DCEFBF00C46DDE /* LaunchScreen.storyboard */; };
+		5B1D29EC26DEB34800D0105F /* TeamsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D29EB26DEB34800D0105F /* TeamsService.swift */; };
+		5B1D29EF26DEB37F00D0105F /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D29EE26DEB37F00D0105F /* Team.swift */; };
+		5B1D29F226DEB39300D0105F /* Division.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D29F126DEB39300D0105F /* Division.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		5A17810D26DCEFBF00C46DDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A17811026DCEFBF00C46DDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A17811226DCEFBF00C46DDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B1D29EB26DEB34800D0105F /* TeamsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsService.swift; sourceTree = "<group>"; };
+		5B1D29EE26DEB37F00D0105F /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		5B1D29F126DEB39300D0105F /* Division.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Division.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,58 @@
 		5A17810326DCEFBE00C46DDE /* DragAndDropDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5B1D29ED26DEB37100D0105F /* Models */,
+				5B1D29EA26DEB32A00D0105F /* Services */,
+				5A17811826DCEFE600C46DDE /* Scenes */,
 				5A17810426DCEFBE00C46DDE /* AppDelegate.swift */,
 				5A17810626DCEFBE00C46DDE /* SceneDelegate.swift */,
-				5A17810826DCEFBE00C46DDE /* ViewController.swift */,
-				5A17810A26DCEFBE00C46DDE /* Main.storyboard */,
 				5A17810D26DCEFBF00C46DDE /* Assets.xcassets */,
 				5A17810F26DCEFBF00C46DDE /* LaunchScreen.storyboard */,
 				5A17811226DCEFBF00C46DDE /* Info.plist */,
 			);
 			path = DragAndDropDemo;
+			sourceTree = "<group>";
+		};
+		5A17811826DCEFE600C46DDE /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				5A17811A26DCF00900C46DDE /* Main */,
+				5A17811926DCEFF700C46DDE /* CityList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		5A17811926DCEFF700C46DDE /* CityList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CityList;
+			sourceTree = "<group>";
+		};
+		5A17811A26DCF00900C46DDE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5A17810A26DCEFBE00C46DDE /* Main.storyboard */,
+				5A17810826DCEFBE00C46DDE /* ViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		5B1D29EA26DEB32A00D0105F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5B1D29EB26DEB34800D0105F /* TeamsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5B1D29ED26DEB37100D0105F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B1D29EE26DEB37F00D0105F /* Team.swift */,
+				5B1D29F126DEB39300D0105F /* Division.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +186,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B1D29EC26DEB34800D0105F /* TeamsService.swift in Sources */,
 				5A17810926DCEFBE00C46DDE /* ViewController.swift in Sources */,
+				5B1D29F226DEB39300D0105F /* Division.swift in Sources */,
 				5A17810526DCEFBE00C46DDE /* AppDelegate.swift in Sources */,
+				5B1D29EF26DEB37F00D0105F /* Team.swift in Sources */,
 				5A17810726DCEFBE00C46DDE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +340,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DragAndDropDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,6 +359,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DragAndDropDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
