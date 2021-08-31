@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct Team: Decodable {
+  let id: UInt
+  let name: String
+  var division: Division
+}

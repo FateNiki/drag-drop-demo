@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Division: Decodable {
+  let id : UInt
+  let name: String
+}
