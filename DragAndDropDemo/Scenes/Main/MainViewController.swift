@@ -7,15 +7,18 @@
 
 import Combine
 import UIKit
+import SwiftUI
 
 final class MainViewController: UIViewController {
   // MARK: - Outlets
   @IBOutlet weak var toUIKitButton: UIButton!
+  @IBOutlet weak var toSwiftUIButton: UIButton!
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
     toUIKitButton.addTarget(self, action: #selector(toUIKit), for: .touchUpInside)
+    toSwiftUIButton.addTarget(self, action: #selector(toSwiftUI), for: .touchUpInside)
   }
 }
 
@@ -24,6 +27,13 @@ private extension MainViewController {
   func toUIKit() {
     let uiKitController = TeamsListUIKitViewController()
     navigationController?.pushViewController(uiKitController, animated: true)
+  }
+
+  @objc
+  func toSwiftUI() {
+    let swiftView = TeamsListSwiftUI()
+    let hostConntroller = UIHostingController(rootView: swiftView)
+    navigationController?.pushViewController(hostConntroller, animated: true)
   }
 }
 

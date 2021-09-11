@@ -43,6 +43,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Choose Interrface" id="KCR-10-23p"/>
                     <connections>
+                        <outlet property="toSwiftUIButton" destination="ZSw-ij-AXq" id="hS4-Cf-dco"/>
                         <outlet property="toUIKitButton" destination="O3Y-zv-LVi" id="chb-hp-UxU"/>
                     </connections>
                 </viewController>

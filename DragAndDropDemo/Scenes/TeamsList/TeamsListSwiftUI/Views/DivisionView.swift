@@ -18,6 +18,7 @@ struct DivisionView: View {
       Image(division.nameShort.uppercased())
         .resizable()
         .aspectRatio(contentMode: .fit)
+        .frame(width: 64, height: 64, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
     }
   }
 }
@@ -32,7 +33,7 @@ struct DivisionView_Previews: PreviewProvider {
       )
     )
     .previewLayout(
-      .fixed(width: 300, height: 80)
+      .sizeThatFits
     )
   }
 }

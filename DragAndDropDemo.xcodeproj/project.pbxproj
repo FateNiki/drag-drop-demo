@@ -25,6 +25,7 @@
 		5B92B2E026ED4C9300C75B4C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B92B2DF26ED4C9300C75B4C /* HeaderView.swift */; };
 		5B92B2E326ED52B500C75B4C /* DivisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B92B2E226ED52B500C75B4C /* DivisionView.swift */; };
 		5B92B2E626ED542600C75B4C /* TeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B92B2E526ED542600C75B4C /* TeamView.swift */; };
+		5B92B2E826ED5D7100C75B4C /* TeamsListSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B92B2E726ED5D7100C75B4C /* TeamsListSwiftUI.swift */; };
 		5BDCA2FD26ECEC4D002E2FCD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5BDCA2FC26ECEC4D002E2FCD /* SnapKit */; };
 		5BDCA2FF26ECEFBE002E2FCD /* TeamsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDCA2FE26ECEFBE002E2FCD /* TeamsUseCase.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		5B92B2DF26ED4C9300C75B4C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		5B92B2E226ED52B500C75B4C /* DivisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionView.swift; sourceTree = "<group>"; };
 		5B92B2E526ED542600C75B4C /* TeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamView.swift; sourceTree = "<group>"; };
+		5B92B2E726ED5D7100C75B4C /* TeamsListSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsListSwiftUI.swift; sourceTree = "<group>"; };
 		5BDCA2FE26ECEFBE002E2FCD /* TeamsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				5B92B2E426ED541900C75B4C /* Views */,
+				5B92B2E726ED5D7100C75B4C /* TeamsListSwiftUI.swift */,
 			);
 			path = TeamsListSwiftUI;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				5B1D29FB26DEBDE100D0105F /* DivisionService.swift in Sources */,
 				5A17810526DCEFBE00C46DDE /* AppDelegate.swift in Sources */,
 				5B92B2E026ED4C9300C75B4C /* HeaderView.swift in Sources */,
+				5B92B2E826ED5D7100C75B4C /* TeamsListSwiftUI.swift in Sources */,
 				5B1D29EF26DEB37F00D0105F /* Team.swift in Sources */,
 				5B1D29FE26DEBFE300D0105F /* TeamsListUIKitViewController.swift in Sources */,
 				5B92B2E626ED542600C75B4C /* TeamView.swift in Sources */,

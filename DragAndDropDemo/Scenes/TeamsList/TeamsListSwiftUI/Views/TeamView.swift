@@ -26,9 +26,8 @@ struct TeamView: View {
         Text(team.name)
         Text(team.venue.name)
       }
-      .padding(
-        EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 8)
-      )
+
+      Spacer(minLength: 8)
     }
   }
 }
