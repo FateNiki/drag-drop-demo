@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,7 @@
 		5B1D29FB26DEBDE100D0105F /* DivisionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D29FA26DEBDE100D0105F /* DivisionService.swift */; };
 		5B1D29FE26DEBFE300D0105F /* CityListUIKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D29FD26DEBFE300D0105F /* CityListUIKitViewController.swift */; };
 		5B1D2A0126DEC8E600D0105F /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D2A0026DEC8E600D0105F /* TeamCell.swift */; };
+		5BDCA2FD26ECEC4D002E2FCD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5BDCA2FC26ECEC4D002E2FCD /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BDCA2FD26ECEC4D002E2FCD /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +177,7 @@
 			);
 			name = DragAndDropDemo;
 			packageProductDependencies = (
+				5BDCA2FC26ECEC4D002E2FCD /* SnapKit */,
 			);
 			productName = DragAndDropDemo;
 			productReference = 5A17810126DCEFBE00C46DDE /* DragAndDropDemo.app */;
@@ -204,6 +207,7 @@
 			);
 			mainGroup = 5A1780F826DCEFBE00C46DDE;
 			packageReferences = (
+				5BDCA2FB26ECEC4D002E2FCD /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 5A17810226DCEFBE00C46DDE /* Products */;
 			projectDirPath = "";
@@ -445,6 +449,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5BDCA2FB26ECEC4D002E2FCD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5BDCA2FC26ECEC4D002E2FCD /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BDCA2FB26ECEC4D002E2FCD /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5A1780F926DCEFBE00C46DDE /* Project object */;
 }

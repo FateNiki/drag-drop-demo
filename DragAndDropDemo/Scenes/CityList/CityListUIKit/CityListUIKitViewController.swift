@@ -66,10 +66,9 @@ extension CityListUIKitViewController: UITableViewDataSource {
       TeamCell.Props(
         title: "Test",
         subtitle: "Subtest",
-        imageUrl: URL(string: "https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/\(indexPath.row + 1).svg")!
+        imageName: "NJD"
       )
     )
     return cell
   }
 }
-
