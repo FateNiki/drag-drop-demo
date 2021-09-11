@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct Division: Decodable {
+struct Division: Decodable, Hashable {
   let id : UInt
   let name: String
+
+  func hash(into hasher: inout Hasher) {
+    hasher.combine(id)
+  }
 }

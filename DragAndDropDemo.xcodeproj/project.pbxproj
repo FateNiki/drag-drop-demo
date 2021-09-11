@@ -23,6 +23,7 @@
 		5B1D29FE26DEBFE300D0105F /* CityListUIKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D29FD26DEBFE300D0105F /* CityListUIKitViewController.swift */; };
 		5B1D2A0126DEC8E600D0105F /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D2A0026DEC8E600D0105F /* TeamCell.swift */; };
 		5BDCA2FD26ECEC4D002E2FCD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5BDCA2FC26ECEC4D002E2FCD /* SnapKit */; };
+		5BDCA2FF26ECEFBE002E2FCD /* TeamsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDCA2FE26ECEFBE002E2FCD /* TeamsUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		5B1D29FA26DEBDE100D0105F /* DivisionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionService.swift; sourceTree = "<group>"; };
 		5B1D29FD26DEBFE300D0105F /* CityListUIKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListUIKitViewController.swift; sourceTree = "<group>"; };
 		5B1D2A0026DEC8E600D0105F /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
+		5BDCA2FE26ECEFBE002E2FCD /* TeamsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				5B1D29FA26DEBDE100D0105F /* DivisionService.swift */,
 				5B1D29EB26DEB34800D0105F /* TeamsService.swift */,
 				5B1D29F526DEB5CB00D0105F /* Repository.swift */,
+				5BDCA2FE26ECEFBE002E2FCD /* TeamsUseCase.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B1D29EC26DEB34800D0105F /* TeamsService.swift in Sources */,
+				5BDCA2FF26ECEFBE002E2FCD /* TeamsUseCase.swift in Sources */,
 				5A17810926DCEFBE00C46DDE /* MainViewController.swift in Sources */,
 				5B1D29F226DEB39300D0105F /* Division.swift in Sources */,
 				5B1D29F626DEB5CB00D0105F /* Repository.swift in Sources */,
