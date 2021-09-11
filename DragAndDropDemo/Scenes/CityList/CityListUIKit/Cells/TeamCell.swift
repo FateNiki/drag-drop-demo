@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 
 final class TeamCell: UITableViewCell {
+  private let logoContainer = UIView()
   private let logoView = UIImageView()
   private let stackView = UIStackView()
   private let title = UILabel()
@@ -29,6 +30,11 @@ final class TeamCell: UITableViewCell {
   override func prepareForReuse() {
     super.prepareForReuse()
   }
+
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    logoContainer.layer.cornerRadius = logoContainer.frame.width / 2
+  }
 }
 
 extension TeamCell {
@@ -47,31 +53,42 @@ extension TeamCell {
 
 private extension TeamCell {
   func setupViews() {
-    contentView.addSubview(logoView)
+    contentView.addSubview(logoContainer)
     contentView.addSubview(stackView)
+    logoContainer.addSubview(logoView)
     stackView.addArrangedSubview(title)
     stackView.addArrangedSubview(subtitle)
   }
 
   func configure() {
+    logoContainer.backgroundColor = .white
+    logoContainer.layer.masksToBounds = true
+
+    logoView.contentMode = .scaleAspectFit
+    logoView.backgroundColor = .white
+
     stackView.axis = .vertical
     stackView.alignment = .leading
-    stackView.distribution = .fill
+    stackView.distribution = .fillEqually
   }
 
   func setupConstraints() {
     logoView.snp.makeConstraints { maker in
+      maker.edges.equalTo(logoContainer).inset(8)
+    }
+
+    logoContainer.snp.makeConstraints { maker in
       maker.height.width.equalTo(64)
-      maker.leading.equalTo(contentView.snp.leading).offset(4)
-      maker.top.equalTo(contentView.snp.top).offset(4)
-      maker.bottom.equalTo(contentView.snp.bottom).inset(4)
+      maker.leading.equalTo(contentView.snp.leading).offset(8)
+      maker.top.equalTo(contentView.snp.top).offset(8)
+      maker.bottom.equalTo(contentView.snp.bottom).inset(8)
     }
 
     stackView.snp.makeConstraints { maker in
-      maker.leading.equalTo(logoView.snp.trailing).offset(8)
-      maker.trailing.equalTo(contentView.snp.trailing).offset(4)
-      maker.top.equalTo(logoView.snp.top)
-      maker.bottom.equalTo(logoView.snp.bottom)
+      maker.leading.equalTo(logoContainer.snp.trailing).offset(8)
+      maker.trailing.equalTo(contentView.snp.trailing).offset(8)
+      maker.top.equalTo(logoContainer.snp.top)
+      maker.bottom.equalTo(logoContainer.snp.bottom)
     }
   }
 }

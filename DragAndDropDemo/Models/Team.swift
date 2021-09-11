@@ -10,5 +10,11 @@ import Foundation
 struct Team: Decodable {
   let id: UInt
   let name: String
+  let abbreviation: String
   var division: Division
+  let venue: Venue
+
+  struct Venue: Decodable {
+    let name: String
+  }
 }

@@ -86,6 +86,7 @@ private extension CityListUIKitViewController {
 
     loading
       .receive(on: DispatchQueue.main)
+      .debounce(for: 10, scheduler: DispatchQueue.main)
       .sink { [tableView] _ in
         tableView.reloadData()
       }
@@ -116,8 +117,8 @@ extension CityListUIKitViewController: UITableViewDataSource {
     cell.render(
       TeamCell.Props(
         title: team.name,
-        subtitle: team.name,
-        imageName: team.name
+        subtitle: team.venue.name,
+        imageName: team.abbreviation
       )
     )
     return cell
