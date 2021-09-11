@@ -51,6 +51,7 @@ private extension CityListUIKitViewController {
 
   func setupTable() {
     tableView.dataSource = self
+    tableView.delegate = self
     tableView.register(TeamCell.self, forCellReuseIdentifier: "TeamCell")
   }
 
@@ -90,9 +91,9 @@ private extension CityListUIKitViewController {
   }
 }
 
-// MARK: - Private methods
+// MARK: - UITableViewDataSource
 
-extension CityListUIKitViewController: UITableViewDataSource {
+extension CityListUIKitViewController: UITableViewDelegate, UITableViewDataSource {
   func numberOfSections(in tableView: UITableView) -> Int {
     groups.count
   }
@@ -122,5 +123,17 @@ extension CityListUIKitViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     groups[section].division.name
+  }
+
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let division = groups[section].division
+    let header = HeaderView()
+    header.render(
+      props: HeaderView.Props(
+        title: division.name,
+        imageName: division.nameShort.uppercased()
+      )
+    )
+    return header
   }
 }
