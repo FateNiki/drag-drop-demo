@@ -74,22 +74,18 @@ private extension CityListUIKitViewController {
         }
         return groups
       }
-      .map {
+      .map { groupedTeams -> [Group] in
         var groups = [Group]()
-        for (division, teams) in $0 {
+        for (division, teams) in groupedTeams {
           groups.append(Group(division: division, teams: teams))
         }
         return groups
       }
-      .assign(to: \CityListUIKitViewController.groups, on: self)
-      .store(in: &cancellable)
-
-    loading
       .receive(on: DispatchQueue.main)
-      .debounce(for: 10, scheduler: DispatchQueue.main)
-      .sink { [tableView] _ in
-        tableView.reloadData()
-      }
+      .sink(receiveValue: { [weak self] newGroups in
+        self?.groups = newGroups
+        self?.tableView.reloadData()
+      })
       .store(in: &cancellable)
   }
 }
