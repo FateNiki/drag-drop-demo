@@ -13,7 +13,7 @@ private struct Group {
   let teams: [Team]
 }
 
-final class CityListUIKitViewController: UIViewController {
+final class TeamsListUIKitViewController: UIViewController {
   private let tableView = UITableView(frame: .zero, style: .grouped)
   private let useCase = TeamsUseCase()
 
@@ -33,7 +33,7 @@ final class CityListUIKitViewController: UIViewController {
 
 // MARK: - Private methods
 
-private extension CityListUIKitViewController {
+private extension TeamsListUIKitViewController {
   func setupViews() {
     view.addSubview(tableView)
   }
@@ -93,7 +93,7 @@ private extension CityListUIKitViewController {
 
 // MARK: - UITableViewDataSource
 
-extension CityListUIKitViewController: UITableViewDelegate, UITableViewDataSource {
+extension TeamsListUIKitViewController: UITableViewDelegate, UITableViewDataSource {
   func numberOfSections(in tableView: UITableView) -> Int {
     groups.count
   }

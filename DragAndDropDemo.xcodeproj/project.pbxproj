@@ -20,9 +20,11 @@
 		5B1D29F626DEB5CB00D0105F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D29F526DEB5CB00D0105F /* Repository.swift */; };
 		5B1D29F926DEBB1200D0105F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D29F826DEBB1200D0105F /* Constants.swift */; };
 		5B1D29FB26DEBDE100D0105F /* DivisionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D29FA26DEBDE100D0105F /* DivisionService.swift */; };
-		5B1D29FE26DEBFE300D0105F /* CityListUIKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D29FD26DEBFE300D0105F /* CityListUIKitViewController.swift */; };
+		5B1D29FE26DEBFE300D0105F /* TeamsListUIKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D29FD26DEBFE300D0105F /* TeamsListUIKitViewController.swift */; };
 		5B1D2A0126DEC8E600D0105F /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D2A0026DEC8E600D0105F /* TeamCell.swift */; };
 		5B92B2E026ED4C9300C75B4C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B92B2DF26ED4C9300C75B4C /* HeaderView.swift */; };
+		5B92B2E326ED52B500C75B4C /* DivisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B92B2E226ED52B500C75B4C /* DivisionView.swift */; };
+		5B92B2E626ED542600C75B4C /* TeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B92B2E526ED542600C75B4C /* TeamView.swift */; };
 		5BDCA2FD26ECEC4D002E2FCD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5BDCA2FC26ECEC4D002E2FCD /* SnapKit */; };
 		5BDCA2FF26ECEFBE002E2FCD /* TeamsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDCA2FE26ECEFBE002E2FCD /* TeamsUseCase.swift */; };
 /* End PBXBuildFile section */
@@ -43,9 +45,11 @@
 		5B1D29F526DEB5CB00D0105F /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		5B1D29F826DEBB1200D0105F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5B1D29FA26DEBDE100D0105F /* DivisionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionService.swift; sourceTree = "<group>"; };
-		5B1D29FD26DEBFE300D0105F /* CityListUIKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListUIKitViewController.swift; sourceTree = "<group>"; };
+		5B1D29FD26DEBFE300D0105F /* TeamsListUIKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsListUIKitViewController.swift; sourceTree = "<group>"; };
 		5B1D2A0026DEC8E600D0105F /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
 		5B92B2DF26ED4C9300C75B4C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		5B92B2E226ED52B500C75B4C /* DivisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionView.swift; sourceTree = "<group>"; };
+		5B92B2E526ED542600C75B4C /* TeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamView.swift; sourceTree = "<group>"; };
 		5BDCA2FE26ECEFBE002E2FCD /* TeamsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,17 +101,18 @@
 			isa = PBXGroup;
 			children = (
 				5A17811A26DCF00900C46DDE /* Main */,
-				5A17811926DCEFF700C46DDE /* CityList */,
+				5A17811926DCEFF700C46DDE /* TeamsList */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		5A17811926DCEFF700C46DDE /* CityList */ = {
+		5A17811926DCEFF700C46DDE /* TeamsList */ = {
 			isa = PBXGroup;
 			children = (
-				5B1D29FC26DEBFA900D0105F /* CityListUIKit */,
+				5B92B2E126ED528B00C75B4C /* TeamsListSwiftUI */,
+				5B1D29FC26DEBFA900D0105F /* TeamsListUIKit */,
 			);
-			path = CityList;
+			path = TeamsList;
 			sourceTree = "<group>";
 		};
 		5A17811A26DCF00900C46DDE /* Main */ = {
@@ -148,13 +153,13 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		5B1D29FC26DEBFA900D0105F /* CityListUIKit */ = {
+		5B1D29FC26DEBFA900D0105F /* TeamsListUIKit */ = {
 			isa = PBXGroup;
 			children = (
 				5B1D29FF26DEC8BE00D0105F /* Cells */,
-				5B1D29FD26DEBFE300D0105F /* CityListUIKitViewController.swift */,
+				5B1D29FD26DEBFE300D0105F /* TeamsListUIKitViewController.swift */,
 			);
-			path = CityListUIKit;
+			path = TeamsListUIKit;
 			sourceTree = "<group>";
 		};
 		5B1D29FF26DEC8BE00D0105F /* Cells */ = {
@@ -164,6 +169,23 @@
 				5B92B2DF26ED4C9300C75B4C /* HeaderView.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		5B92B2E126ED528B00C75B4C /* TeamsListSwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				5B92B2E426ED541900C75B4C /* Views */,
+			);
+			path = TeamsListSwiftUI;
+			sourceTree = "<group>";
+		};
+		5B92B2E426ED541900C75B4C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5B92B2E226ED52B500C75B4C /* DivisionView.swift */,
+				5B92B2E526ED542600C75B4C /* TeamView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,12 +268,14 @@
 				5BDCA2FF26ECEFBE002E2FCD /* TeamsUseCase.swift in Sources */,
 				5A17810926DCEFBE00C46DDE /* MainViewController.swift in Sources */,
 				5B1D29F226DEB39300D0105F /* Division.swift in Sources */,
+				5B92B2E326ED52B500C75B4C /* DivisionView.swift in Sources */,
 				5B1D29F626DEB5CB00D0105F /* Repository.swift in Sources */,
 				5B1D29FB26DEBDE100D0105F /* DivisionService.swift in Sources */,
 				5A17810526DCEFBE00C46DDE /* AppDelegate.swift in Sources */,
 				5B92B2E026ED4C9300C75B4C /* HeaderView.swift in Sources */,
 				5B1D29EF26DEB37F00D0105F /* Team.swift in Sources */,
-				5B1D29FE26DEBFE300D0105F /* CityListUIKitViewController.swift in Sources */,
+				5B1D29FE26DEBFE300D0105F /* TeamsListUIKitViewController.swift in Sources */,
+				5B92B2E626ED542600C75B4C /* TeamView.swift in Sources */,
 				5B1D2A0126DEC8E600D0105F /* TeamCell.swift in Sources */,
 				5B1D29F426DEB55A00D0105F /* Error.swift in Sources */,
 				5A17810726DCEFBE00C46DDE /* SceneDelegate.swift in Sources */,

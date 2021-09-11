@@ -22,7 +22,7 @@ final class MainViewController: UIViewController {
 private extension MainViewController {
   @objc
   func toUIKit() {
-    let uiKitController = CityListUIKitViewController()
+    let uiKitController = TeamsListUIKitViewController()
     navigationController?.pushViewController(uiKitController, animated: true)
   }
 }
