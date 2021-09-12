@@ -10,10 +10,25 @@ import Combine
 
 final class TeamsUseCase {
   private let teamsService = TeamsService()
-  private let empty: [Team] = []
+  private let empty: [Group] = []
 
-  public func getTeams() -> AnyPublisher<[Team], Never> {
+  public func getGroup() -> AnyPublisher<[Group], Never> {
     teamsService.fetch()
+      .map { teams -> [Division: [Team]] in
+        var groups: [Division: [Team]] = [:]
+        for team in teams {
+          groups[team.division] = groups[team.division] ?? []
+          groups[team.division]?.append(team)
+        }
+        return groups
+      }
+      .map { groupedTeams -> [Group] in
+        var groups = [Group]()
+        for (division, teams) in groupedTeams {
+          groups.append(Group(division: division, teams: teams))
+        }
+        return groups
+      }
       .replaceError(with: empty)
       .eraseToAnyPublisher()
   }

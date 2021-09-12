@@ -19,6 +19,7 @@ struct DivisionView: View {
         .resizable()
         .aspectRatio(contentMode: .fit)
         .frame(width: 64, height: 64, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        .padding(.all, 8)
     }
   }
 }

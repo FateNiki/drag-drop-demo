@@ -31,7 +31,9 @@ private extension MainViewController {
 
   @objc
   func toSwiftUI() {
-    let swiftView = TeamsListSwiftUI()
+    let useCase = TeamsUseCase()
+    let viewModel = TeamsViewModel(useCase: useCase)
+    let swiftView = TeamsListSwiftUI(viewModel: viewModel)
     let hostConntroller = UIHostingController(rootView: swiftView)
     navigationController?.pushViewController(hostConntroller, animated: true)
   }

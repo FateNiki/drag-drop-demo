@@ -8,24 +8,41 @@
 import SwiftUI
 
 struct TeamsListSwiftUI: View {
+  @ObservedObject var viewModel: TeamsViewModel
+
   var body: some View {
-    let columns: [GridItem] = [
-      GridItem(.flexible(minimum: 0, maximum: .infinity))
-    ]
     ScrollView {
-      LazyVGrid(columns: columns) {
-        ForEach((0...79), id: \.self) {
-          let codepoint = $0 + 0x1f600
-          let codepointString = String(format: "%02X", codepoint)
-          Text("\(codepointString)")
+      LazyVStack(spacing: 0) {
+        ForEach(viewModel.groups) { group in
+          Section(header: DivisionView(division: group.division)) {
+            Divider()
+              .background(Color.gray)
+            ForEach(group.teams) { team in
+              TeamView(team: team)
+              Divider()
+                .background(Color.gray)
+                .padding(.leading, 16)
+            }
+          }
         }
       }
     }
+    .onAppear(perform: {
+      viewModel.loadData()
+    })
+    .navigationTitle("SwiftUI")
+    .navigationBarTitle("SwiftUI", displayMode: .inline)
   }
 }
 
 struct TeamsListSwiftUI_Previews: PreviewProvider {
   static var previews: some View {
-    TeamsListSwiftUI()
+    NavigationView {
+      TeamsListSwiftUI(
+        viewModel: TeamsViewModel(
+          useCase: TeamsUseCase()
+        )
+      )
+    }
   }
 }

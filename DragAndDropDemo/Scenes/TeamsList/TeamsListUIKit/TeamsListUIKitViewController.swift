@@ -8,11 +8,6 @@
 import UIKit
 import Combine
 
-private struct Group {
-  let division: Division
-  let teams: [Team]
-}
-
 final class TeamsListUIKitViewController: UIViewController {
   private let tableView = UITableView(frame: .zero, style: .grouped)
   private let useCase = TeamsUseCase()
@@ -65,23 +60,8 @@ private extension TeamsListUIKitViewController {
   }
 
   func loadingData() {
-    let loading = useCase.getTeams().share()
+    let loading = useCase.getGroup().share()
     loading
-      .map { teams -> [Division: [Team]] in
-        var groups: [Division: [Team]] = [:]
-        for team in teams {
-          groups[team.division] = groups[team.division] ?? []
-          groups[team.division]?.append(team)
-        }
-        return groups
-      }
-      .map { groupedTeams -> [Group] in
-        var groups = [Group]()
-        for (division, teams) in groupedTeams {
-          groups.append(Group(division: division, teams: teams))
-        }
-        return groups
-      }
       .receive(on: DispatchQueue.main)
       .sink(receiveValue: { [weak self] newGroups in
         self?.groups = newGroups

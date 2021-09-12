@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Team: Decodable {
+struct Team: Decodable, Identifiable {
   let id: UInt
   let name: String
   let abbreviation: String

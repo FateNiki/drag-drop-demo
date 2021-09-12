@@ -17,8 +17,8 @@ struct TeamView: View {
           .padding(8)
         Image(team.abbreviation)
           .resizable()
-          .padding(18)
           .scaledToFit()
+          .padding(18)
       }
       .frame(width: 80, height: 80, alignment: .leading)
 
@@ -38,7 +38,7 @@ struct TeamView_Previews: PreviewProvider {
       team: Team(
         id: 1,
         name: "New Yourk Rangers",
-        abbreviation: "NYR",
+        abbreviation: "OTT",
         division: Division(id: 0, name: "", nameShort: ""),
         venue: Team.Venue(name: "Madison Square Garden")
       )
