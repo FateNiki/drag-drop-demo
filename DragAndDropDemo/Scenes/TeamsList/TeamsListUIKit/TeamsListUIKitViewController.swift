@@ -11,6 +11,11 @@ import Combine
 final class TeamsListUIKitViewController: UIViewController {
   private let tableView = UITableView(frame: .zero, style: .grouped)
   private let useCase = TeamsUseCase()
+  private lazy var backdrop: UIView = {
+    let backdrop = UIView()
+    backdrop.backgroundColor = .blue.withAlphaComponent(0.5)
+    return backdrop
+  }()
 
   private var groups: [Group] = []
   private var cancellable: [AnyCancellable] = []
@@ -31,6 +36,7 @@ final class TeamsListUIKitViewController: UIViewController {
 private extension TeamsListUIKitViewController {
   func setupViews() {
     view.addSubview(tableView)
+    tableView.addSubview(backdrop)
   }
 
   func configure() {
@@ -184,6 +190,9 @@ extension TeamsListUIKitViewController: UITableViewDropDelegate {
       let row = tableView.numberOfRows(inSection: section)
       toIndexPath = IndexPath(row: row, section: section)
     }
+
+    let cell = tableView.rectForRow(at: toIndexPath)
+    backdrop.frame = cell
 
     guard
       let item = session.items.first,
