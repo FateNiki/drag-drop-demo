@@ -45,6 +45,8 @@ extension TeamCell {
   }
 
   func render(_ props: Props) {
+    selectionStyle = .none
+  
     logoView.image = UIImage(named: props.imageName)
     title.text = props.title
     subtitle.text = props.subtitle

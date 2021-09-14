@@ -11,5 +11,5 @@ struct Group: Identifiable {
   var id: String { "division_\(division.id)" }
 
   let division: Division
-  let teams: [Team]
+  var teams: [Team]
 }
