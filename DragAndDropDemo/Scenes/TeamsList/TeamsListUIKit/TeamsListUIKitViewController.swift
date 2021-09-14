@@ -49,8 +49,6 @@ private extension TeamsListUIKitViewController {
     tableView.delegate = self
     tableView.register(TeamCell.self, forCellReuseIdentifier: "TeamCell")
 
-    tableView.allowsSelection = false
-    tableView.allowsSelectionDuringEditing = false
     tableView.dragDelegate = self
     tableView.dropDelegate = self
     tableView.dragInteractionEnabled = true

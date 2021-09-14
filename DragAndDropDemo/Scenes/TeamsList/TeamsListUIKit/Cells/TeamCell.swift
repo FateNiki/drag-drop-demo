@@ -27,10 +27,6 @@ final class TeamCell: UITableViewCell {
     fatalError("init(coder:) has not been implemented")
   }
 
-  override func prepareForReuse() {
-    super.prepareForReuse()
-  }
-
   override func layoutSubviews() {
     super.layoutSubviews()
     logoContainer.layer.cornerRadius = logoContainer.frame.width / 2
@@ -44,9 +40,7 @@ extension TeamCell {
     let imageName: String
   }
 
-  func render(_ props: Props) {
-    selectionStyle = .none
-  
+  func render(_ props: Props) { 
     logoView.image = UIImage(named: props.imageName)
     title.text = props.title
     subtitle.text = props.subtitle
@@ -63,6 +57,9 @@ private extension TeamCell {
   }
 
   func configure() {
+    backgroundColor = .clear
+    contentView.backgroundColor = .clear
+
     logoContainer.backgroundColor = .white
     logoContainer.layer.masksToBounds = true
 
