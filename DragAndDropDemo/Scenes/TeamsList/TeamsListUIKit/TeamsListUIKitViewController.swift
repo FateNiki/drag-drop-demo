@@ -85,6 +85,8 @@ private extension TeamsListUIKitViewController {
     return groups[indexPath.section].teams[indexPath.row]
   }
 
+  // MARK: - Interaction
+
   func move(from sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
     tableView.performBatchUpdates({
       tableView.moveRow(at: sourceIndexPath, to: destinationIndexPath)
@@ -220,13 +222,12 @@ extension TeamsListUIKitViewController: UITableViewDropDelegate {
     )
   }
 
-
   func tableView(
     _ tableView: UITableView,
     moveRowAt sourceIndexPath: IndexPath,
     to destinationIndexPath: IndexPath
   ) {
-      move(from: sourceIndexPath, to: destinationIndexPath)
+    move(from: sourceIndexPath, to: destinationIndexPath)
   }
 
   func tableView(
