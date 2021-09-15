@@ -153,10 +153,6 @@ extension TeamsListUIKitViewController: UITableViewDelegate, UITableViewDataSour
     )
     return header
   }
-
-  func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-    false
-  }
 }
 
 // MARK: - UITableViewDragDelegate
@@ -168,14 +164,10 @@ extension TeamsListUIKitViewController: UITableViewDragDelegate {
     at indexPath: IndexPath
   ) -> [UIDragItem] {
     backdrop.isHidden = false
+
     let item = UIDragItem(itemProvider: NSItemProvider())
     item.localObject = indexPath
     return [item]
-  }
-
-  func tableView(_ tableView: UITableView, dropSessionDidEnd session: UIDropSession) {
-    backdrop.isHidden = true
-    backdrop.frame = .zero
   }
 }
 
@@ -188,16 +180,16 @@ extension TeamsListUIKitViewController: UITableViewDropDelegate {
     dropSessionDidUpdate session: UIDropSession,
     withDestinationIndexPath destinationIndexPath: IndexPath?
   ) -> UITableViewDropProposal {
-    let toIndexPath: IndexPath
-
-    if let indexPath = destinationIndexPath {
-      toIndexPath = indexPath
-    } else {
-      let section = tableView.numberOfSections - 1
-      let row = tableView.numberOfRows(inSection: section)
-      toIndexPath = IndexPath(row: row, section: section)
+    guard
+      let item = session.items.first,
+      let fromIndexPath = item.localObject as? IndexPath,
+      let toIndexPath = destinationIndexPath
+    else {
+      backdrop.frame = .zero
+      return UITableViewDropProposal(operation: .forbidden)
     }
 
+    // Backdrop
     
     if let firstCell = tableView.cellForRow(at: toIndexPath) {
       let headerFrame = tableView.rectForHeader(inSection: toIndexPath.section)
@@ -219,19 +211,13 @@ extension TeamsListUIKitViewController: UITableViewDropDelegate {
       backdrop.frame = .zero
     }
 
-
-    guard
-      let item = session.items.first,
-      let fromIndexPath = item.localObject as? IndexPath
-    else {
-      backdrop.frame = .zero
-      return UITableViewDropProposal(operation: .forbidden)
-    }
-
     if fromIndexPath.section == toIndexPath.section {
       return .init(operation: .move, intent: .automatic)
     }
-    return UITableViewDropProposal(operation: .copy, intent: .insertIntoDestinationIndexPath)
+    return UITableViewDropProposal(
+      operation: .move,
+      intent: .insertIntoDestinationIndexPath
+    )
   }
 
 
@@ -247,32 +233,28 @@ extension TeamsListUIKitViewController: UITableViewDropDelegate {
     _ tableView: UITableView,
     performDropWith coordinator: UITableViewDropCoordinator
   ) {
-    let destinationIndexPath: IndexPath
-
-    if let indexPath = coordinator.destinationIndexPath {
-      destinationIndexPath = indexPath
-    } else {
-      let section = tableView.numberOfSections - 1
-      let row = tableView.numberOfRows(inSection: section)
-      destinationIndexPath = IndexPath(row: row, section: section)
-    }
-
     guard
       let item = coordinator.session.items.first,
-      let sourceIndexPath = item.localObject as? IndexPath
+      let sourceIndexPath = item.localObject as? IndexPath,
+      let destinationIndexPath = coordinator.destinationIndexPath
     else {
       return
     }
 
-    switch coordinator.proposal.operation {
-      case .copy:
-        interact(from: sourceIndexPath, to: destinationIndexPath)
-
-      case .move:
+    switch coordinator.proposal.intent {
+      case .insertAtDestinationIndexPath:
         move(from: sourceIndexPath, to: destinationIndexPath)
+
+      case .insertIntoDestinationIndexPath:
+        interact(from: sourceIndexPath, to: destinationIndexPath)
 
       default:
         break
     }
+
+    // Backdrop
+
+    backdrop.isHidden = true
+    backdrop.frame = .zero
   }
 }
