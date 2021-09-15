@@ -171,6 +171,21 @@ extension TeamsListUIKitViewController: UITableViewDragDelegate {
     item.localObject = indexPath
     return [item]
   }
+
+  func tableView(
+    _ tableView: UITableView,
+    dragPreviewParametersForRowAt indexPath: IndexPath
+  ) -> UIDragPreviewParameters? {
+    guard
+      let cell = tableView.cellForRow(at: indexPath)
+    else {
+      return nil
+    }
+    let preview = UIDragPreviewParameters()
+    preview.visiblePath = UIBezierPath(roundedRect: cell.bounds.insetBy(dx: 5, dy: 5), cornerRadius: 12)
+    return preview
+  }
+
 }
 
 // MARK: - UITableViewDragDelegate
