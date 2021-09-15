@@ -59,6 +59,7 @@ private extension TeamsListUIKitViewController {
     tableView.dragDelegate = self
     tableView.dropDelegate = self
     tableView.dragInteractionEnabled = true
+//    tableView.setEditing(true, animated: false)
   }
 
   func setupConstraints() {
@@ -155,6 +156,14 @@ extension TeamsListUIKitViewController: UITableViewDelegate, UITableViewDataSour
     )
     return header
   }
+
+//  func tableView(
+//    _ tableView: UITableView,
+//    moveRowAt sourceIndexPath: IndexPath,
+//    to destinationIndexPath: IndexPath
+//  ) {
+//    move(from: sourceIndexPath, to: destinationIndexPath)
+//  }
 }
 
 // MARK: - UITableViewDragDelegate
@@ -239,14 +248,6 @@ extension TeamsListUIKitViewController: UITableViewDropDelegate {
 
   func tableView(
     _ tableView: UITableView,
-    moveRowAt sourceIndexPath: IndexPath,
-    to destinationIndexPath: IndexPath
-  ) {
-    move(from: sourceIndexPath, to: destinationIndexPath)
-  }
-
-  func tableView(
-    _ tableView: UITableView,
     performDropWith coordinator: UITableViewDropCoordinator
   ) {
     guard
@@ -260,9 +261,11 @@ extension TeamsListUIKitViewController: UITableViewDropDelegate {
     switch coordinator.proposal.intent {
       case .insertAtDestinationIndexPath:
         move(from: sourceIndexPath, to: destinationIndexPath)
+        coordinator.drop(item, toRowAt: destinationIndexPath)
 
       case .insertIntoDestinationIndexPath:
         interact(from: sourceIndexPath, to: destinationIndexPath)
+        coordinator.drop(item, toRowAt: sourceIndexPath)
 
       default:
         break
