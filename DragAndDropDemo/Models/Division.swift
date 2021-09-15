@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Division: Decodable, Hashable {
+struct Division: Codable, Hashable {
   let id : UInt
   let name: String
   let nameShort: String
