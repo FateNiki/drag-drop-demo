@@ -22,6 +22,8 @@
 		5B1D29FB26DEBDE100D0105F /* DivisionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D29FA26DEBDE100D0105F /* DivisionService.swift */; };
 		5B1D29FE26DEBFE300D0105F /* TeamsListUIKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D29FD26DEBFE300D0105F /* TeamsListUIKitViewController.swift */; };
 		5B1D2A0126DEC8E600D0105F /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D2A0026DEC8E600D0105F /* TeamCell.swift */; };
+		5B38F3B926F26C4400D04631 /* DropItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38F3B826F26C4400D04631 /* DropItem.swift */; };
+		5B38F3BD26F272F700D04631 /* TeamDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38F3BC26F272F700D04631 /* TeamDropDelegate.swift */; };
 		5B3E5D8F26EE6EAB0012B9A8 /* TeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E5D8E26EE6EAB0012B9A8 /* TeamsViewModel.swift */; };
 		5B3E5D9126EE6F0E0012B9A8 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E5D9026EE6F0E0012B9A8 /* Group.swift */; };
 		5B92B2E026ED4C9300C75B4C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B92B2DF26ED4C9300C75B4C /* HeaderView.swift */; };
@@ -50,6 +52,8 @@
 		5B1D29FA26DEBDE100D0105F /* DivisionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionService.swift; sourceTree = "<group>"; };
 		5B1D29FD26DEBFE300D0105F /* TeamsListUIKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsListUIKitViewController.swift; sourceTree = "<group>"; };
 		5B1D2A0026DEC8E600D0105F /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
+		5B38F3B826F26C4400D04631 /* DropItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropItem.swift; sourceTree = "<group>"; };
+		5B38F3BC26F272F700D04631 /* TeamDropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDropDelegate.swift; sourceTree = "<group>"; };
 		5B3E5D8E26EE6EAB0012B9A8 /* TeamsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewModel.swift; sourceTree = "<group>"; };
 		5B3E5D9026EE6F0E0012B9A8 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		5B92B2DF26ED4C9300C75B4C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 				5B92B2E426ED541900C75B4C /* Views */,
 				5B92B2E726ED5D7100C75B4C /* TeamsListSwiftUI.swift */,
 				5B3E5D8E26EE6EAB0012B9A8 /* TeamsViewModel.swift */,
+				5B38F3BC26F272F700D04631 /* TeamDropDelegate.swift */,
+				5B38F3B826F26C4400D04631 /* DropItem.swift */,
 			);
 			path = TeamsListSwiftUI;
 			sourceTree = "<group>";
@@ -283,6 +289,8 @@
 				5B1D29FB26DEBDE100D0105F /* DivisionService.swift in Sources */,
 				5A17810526DCEFBE00C46DDE /* AppDelegate.swift in Sources */,
 				5B92B2E026ED4C9300C75B4C /* HeaderView.swift in Sources */,
+				5B38F3BD26F272F700D04631 /* TeamDropDelegate.swift in Sources */,
+				5B38F3B926F26C4400D04631 /* DropItem.swift in Sources */,
 				5B92B2E826ED5D7100C75B4C /* TeamsListSwiftUI.swift in Sources */,
 				5B1D29EF26DEB37F00D0105F /* Team.swift in Sources */,
 				5B1D29FE26DEBFE300D0105F /* TeamsListUIKitViewController.swift in Sources */,
