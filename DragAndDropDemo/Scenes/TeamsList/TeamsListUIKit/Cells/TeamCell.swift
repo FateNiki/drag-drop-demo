@@ -57,8 +57,8 @@ private extension TeamCell {
   }
 
   func configure() {
-    backgroundColor = .clear
-    contentView.backgroundColor = .clear
+    backgroundColor = .systemBackground
+    contentView.backgroundColor = .systemBackground
 
     logoContainer.backgroundColor = .white
     logoContainer.layer.masksToBounds = true

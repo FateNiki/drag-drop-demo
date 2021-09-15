@@ -13,7 +13,8 @@ final class TeamsListUIKitViewController: UIViewController {
   private let useCase = TeamsUseCase()
   private lazy var backdrop: UIView = {
     let backdrop = UIView()
-    backdrop.backgroundColor = .blue.withAlphaComponent(0.5)
+    backdrop.backgroundColor = .systemBlue.withAlphaComponent(0.7)
+    backdrop.isHidden = true
     return backdrop
   }()
 
@@ -166,9 +167,15 @@ extension TeamsListUIKitViewController: UITableViewDragDelegate {
     itemsForBeginning session: UIDragSession,
     at indexPath: IndexPath
   ) -> [UIDragItem] {
+    backdrop.isHidden = false
     let item = UIDragItem(itemProvider: NSItemProvider())
     item.localObject = indexPath
     return [item]
+  }
+
+  func tableView(_ tableView: UITableView, dropSessionDidEnd session: UIDropSession) {
+    backdrop.isHidden = true
+    backdrop.frame = .zero
   }
 }
 
@@ -191,13 +198,33 @@ extension TeamsListUIKitViewController: UITableViewDropDelegate {
       toIndexPath = IndexPath(row: row, section: section)
     }
 
-    let cell = tableView.rectForRow(at: toIndexPath)
-    backdrop.frame = cell
+    
+    if let firstCell = tableView.cellForRow(at: toIndexPath) {
+      let headerFrame = tableView.rectForHeader(inSection: toIndexPath.section)
+      let newFrame = CGRect(
+        x: headerFrame.minX,
+        y: headerFrame.maxY + (CGFloat(toIndexPath.row) * firstCell.frame.height),
+        width: firstCell.frame.width,
+        height: firstCell.frame.height
+      )
+
+      if backdrop.frame == .zero {
+        backdrop.frame = newFrame
+      } else {
+        UIView.animate(withDuration: 0.15) { [backdrop] in
+          backdrop.frame = newFrame
+        }
+      }
+    } else {
+      backdrop.frame = .zero
+    }
+
 
     guard
       let item = session.items.first,
       let fromIndexPath = item.localObject as? IndexPath
     else {
+      backdrop.frame = .zero
       return UITableViewDropProposal(operation: .forbidden)
     }
 
